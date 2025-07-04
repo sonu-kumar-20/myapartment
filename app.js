@@ -10,7 +10,6 @@ const session = require('express-session');
 const dbUrl = process.env.MONGO_ATLASURL
 const mongoStore = require('connect-mongo')
 // i added this line
-const listingController = require('./controllers/listingController');
 
 
 const flash = require("connect-flash");
@@ -78,11 +77,11 @@ app.use('/listings/:id/reviews', reviewRoutes);
 app.use('/', userRoutes);
 app.use('/chat', chatRoutes);
 
-// app.get('/', (req, res) => {
-//   res.send("I am working here");
-// });
+app.get('/', (req, res) => {
+  res.send("I am working here");
+});
 
-app.get('/', listingController.allListingPage);
+// app.get('/', listingController.allListingPage);
 
 
 app.all("*", (req, res, next) => {
