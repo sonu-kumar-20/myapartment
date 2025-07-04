@@ -1,0 +1,5 @@
+# Ignore environment variables and secrets
+.env
+
+# Ignore node_modules (huge folder, can be rebuilt from package.json)
+node_modules/

@@ -7,7 +7,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require("ejs-mate");
 const session = require('express-session');
-
+const dbUrl = process.env.MONGO_ATLASURL
 const mongoStore = require('connect-mongo')
 
 
@@ -32,8 +32,21 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
+const store = mongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret:process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error",()=>{
+  console.log("error in mongo session stroe ",err);
+})
+
 const sessionOptions = {
-  secret: "mysecretsonu",
+  store,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -42,6 +55,7 @@ const sessionOptions = {
     httpOnly: true,
   }
 };
+
 app.use(session(sessionOptions));
 app.use(flash());
 
