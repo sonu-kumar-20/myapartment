@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<form action="/verify-otp" method="POST">
+  <h6>Enter OTP sent to <%= email %></h6>
+  <input type="hidden" name="email" value="<%= email %>">
+  <input type="text" name="otp" placeholder="Enter OTP" required>
+  <button type="submit" class="btn btn-primary">Verify & Register</button>
+</form>

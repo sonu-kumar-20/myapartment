@@ -1,0 +1,216 @@
+body{
+  
+  font-family: "Plus Jakarta Sans", serif  !important;
+ display: flex;
+  min-height: 100vh;
+  flex-direction: column; 
+  
+
+
+}
+.container{
+  flex: 1;
+}
+/* ==================== NAVBAR ==================== */
+.navbar {
+  height: 5rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.navbar .navbar-nav .nav-link {
+  position: relative;
+  font-weight: bold;
+  color: black !important;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect on hover */
+.navbar .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: cadetblue;
+  transition: width 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: cadetblue;
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  color: rgb(245, 7, 7) !important;
+}
+
+/* Compass Icon */
+.fa-solid.fa-compass {
+  color: cadetblue;
+  font-size: 2rem;
+}
+
+/* footer */
+
+.f-info-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0) ;
+
+} 
+
+.f-info-links a:hover {
+  text-decoration: underline;
+ 
+
+} 
+.f-info-links ,.f-info-social ,.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.f-info-social i {
+ margin: 0.5rem 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  
+}
+.f-info-social i:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease
+   
+ }
+.f-info {
+  text-align: center;
+  height: 10 rem;
+  background-color: cadetblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly ;
+}
+
+
+/* card image tag */
+.listing-card{
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+.card-img-top{
+
+
+width: 100% !important;
+object-fit: cover;
+height: 400px !important;
+
+}
+.card-body{
+  padding: 0 !important;
+
+}
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listings-link{
+  text-decoration: none;
+}
+
+/* image overlay effect use here */
+.card-img-overlay{
+  opacity: 0;
+}
+.card-img-overlay:hover{
+  opacity: 0.2;
+  background-color: white;
+}
+/* .addbutton */
+.btn-dark{
+  border: none;
+  background-color: rebeccapurple;
+  border-radius: 5rem;
+}
+
+/* show_page */
+.show-img{
+  height: 30vh;
+  
+}
+
+.login-setup{
+  text-decoration: none;
+  margin: 0.5rem;
+  color: cadetblue;
+  font-weight: 900;
+}
+.login-setup:hover{
+  border-radius: 10px;
+  background-color: rgb(109, 112, 113);
+}
+.scroll-container {
+  position: relative;
+  width: 100%;
+  border: 0px solid rgb(241, 236, 236);
+  padding: 10px;
+}
+
+/* Initially show only part of the content */
+.scroll {
+  max-height: 100px; /* Adjust height for initial view */
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+/* Hidden checkbox to toggle "Read More" */
+#expand-toggle {
+  display: none;
+}
+
+/* When checkbox is checked, expand the section */
+#expand-toggle:checked ~ .scroll {
+  max-height: 500px; /* Adjust max height as needed */
+  overflow: auto; /* Enable scrolling when expanded */
+}
+
+/* Styling the Read More button */
+.read-more-label {
+  display: block;
+  margin-top: 0px;
+  text-align: right;
+  cursor: pointer;
+  color: black;
+  
+}
+
+.read-more-label:hover {
+  text-decoration: underline;
+}
+
+/* Change text when expanded */
+#expand-toggle:checked ~ .read-more-label::after {
+  content: "Read Less";
+}
+
+.read-more-label::after {
+  content: "Read More";
+}
+
+
+#map {
+height: 300px;
+width: 700px;
+}
+
+/* chatroom  */
