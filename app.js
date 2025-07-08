@@ -1,8 +1,13 @@
-require('dotenv').config(); // Always load at the top, regardless of NODE_ENV
-
+require('dotenv').config(); // Always first
 
 const express = require('express');
+const app = express();
+
+// 🌟 TRUST PROXY (for Render)
+app.set('trust proxy', 1);
+
 const path = require('path');
+
 const methodOverride = require('method-override');
 const ejsMate = require("ejs-mate");
 const session = require('express-session');
@@ -21,7 +26,7 @@ const reviewRoutes = require('./routes/review');
 const userRoutes = require('./routes/user');
 const chatRoutes = require('./routes/chat');
 
-const app = express();
+
 
 // View engine and middleware
 app.set("view engine", "ejs");
