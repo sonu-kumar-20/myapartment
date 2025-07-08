@@ -49,12 +49,16 @@ const sessionOptions = {
   store,
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: true,
+  // i changed here true to false
+  saveUninitialized: false,
   cookie: {
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
-  }
+  expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production", // ✅ this is important
+  sameSite: 'lax'
+}
+
 };
 
 app.use(session(sessionOptions));
@@ -62,6 +66,14 @@ app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  console.log("🧠 SESSION DEBUG:");
+  console.log("Session ID:", req.sessionID);
+  console.log("Is Authenticated:", req.isAuthenticated ? req.isAuthenticated() : false);
+  console.log("User:", req.user);
+  next();
+});
 
 // Flash and user middleware
 app.use((req, res, next) => {
