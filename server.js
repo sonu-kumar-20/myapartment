@@ -14,7 +14,7 @@ app.set("socketio", io);
 connectDB(dbUrl);         // Connect to MongoDB
 setupSocket(io);     // Setup Socket.io
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // 3000 for local testing
 server.listen(PORT, () => {
-  console.log(`🔊 Server listening on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
