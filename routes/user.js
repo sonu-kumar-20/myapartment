@@ -25,20 +25,39 @@ res.render("users/signup.ejs");
 // Send OTP Route
 router.post("/send-otp", async (req, res) => {
   const { username, email, password } = req.body;
-  const otp = otpGenerator.generate(6, { digits: true, alphabets: false });
-  const expiresAt = new Date(Date.now() + 5 * 60 * 1000);
 
+  // ✅ Generate 6-digit numeric OTP
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes expiry
+
+  // Remove old OTPs if any
   await Otp.deleteMany({ email });
+
+  // Save new OTP in DB
   await Otp.create({ email, otp, expiresAt });
 
-  const html = `<h3>Your WanderLust OTP is <b>${otp}</b></h3><p>Valid for 5 minutes</p>`;
-  await sendMail(email, "Verify your email", html);
+  // ✅ Professional, branded email content
+  const html = `
+    <div style="font-family: Arial, sans-serif; padding: 20px;">
+      <h2 style="color: #333;">Welcome to <span style="color:#007bff;">MyApartment</span>!</h2>
+      <p>Your one-time password (OTP) for email verification is:</p>
+      <h1 style="background-color: #f2f2f2; padding: 10px; width: fit-content;">${otp}</h1>
+      <p style="color: #555;">This OTP is valid for <strong>5 minutes</strong>. Do not share it with anyone.</p>
+      <br/>
+      <p>Thanks,<br/>The <strong>MyApartment</strong> Team</p>
+    </div>
+  `;
 
-  // Save form data in session
+  // Send email
+  await sendMail(email, "Verify your email - MyApartment", html);
+
+  // Store form data temporarily in session
   req.session.signupData = { username, email, password };
 
+  // Render OTP input page
   res.render("users/enterOtp", { email });
 });
+
 
 // Verify OTP Route
 router.post("/verify-otp", async (req, res, next) => {
