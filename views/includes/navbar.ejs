@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-md border-bottom  sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-solid fa-house-chimney"></i></a>
@@ -31,3 +32,57 @@
   
 </nav>
 <marquee behavior="" scrolldelay="100"direction="right" style="color:cadetblue  ; font-weight: bold;"><h3><b>Welcome to My Home</b></h3></marquee>
+=======
+<nav class="navbar navbar-expand-md sticky-top border-bottom bg-white shadow-sm">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-house-chimney"></i></a>
+
+    <!-- Toggler (Hamburger) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse custom-navbar-collapse" id="navbarNavDropdown">
+
+      <!-- Left Links -->
+      <div class="navbar-nav me-auto mb-2 mb-md-0">
+        <a class="nav-link" href="/listings">All Listings</a>
+        <a class="nav-link" href="/listings/new">Add New</a>
+      </div>
+
+      <!-- Search Bar -->
+      <form class="d-flex mx-md-auto my-2 my-md-0 search-form" method="GET" action="/listings">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search listings..."
+          aria-label="Search" value="<%= typeof search !== 'undefined' ? search : '' %>">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <!-- Right Side -->
+      <div class="navbar-nav ms-md-auto">
+        <% if (currUser) { %>
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center justify-content-center profile-trigger" role="button"
+              id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="profile-icon rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="profileDropdown">
+              <li class="text-muted mb-2">Hi, <%= currUser.username %></li>
+              <li><a class="dropdown-item" href="/chat/inbox"><i class="fa-regular fa-user me-2"></i>Inbox</a></li>
+              <li><a class="dropdown-item" href="/logout"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        <% } else { %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/signup">Signup</a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>
+>>>>>>> faf72e3 (Initial commit to new repo)

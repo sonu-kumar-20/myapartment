@@ -16,7 +16,11 @@ module.exports.signupUser = async (req, res) => {
       if(err){
         return next(err);
       }
+<<<<<<< HEAD
         req.flash("success", "Welcome to Wanderlust!");
+=======
+        req.flash("success", "Welcome to My Home Please don't share otp with any one");
+>>>>>>> faf72e3 (Initial commit to new repo)
     res.redirect("/listings");
     })
   
@@ -27,7 +31,11 @@ module.exports.signupUser = async (req, res) => {
 }
 
 module.exports.loginUser = async (req, res) => {
+<<<<<<< HEAD
   req.flash("success", "Welcome to WanderLust");
+=======
+  req.flash("success", "Welcome to My Home");
+>>>>>>> faf72e3 (Initial commit to new repo)
   let redirectUrl = res.locals.redirectUrl || "/listings";
 
   res.redirect(redirectUrl);

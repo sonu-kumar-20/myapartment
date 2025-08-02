@@ -9,7 +9,11 @@ const sampleListings = [
     },
     price: 1500,
     location: "Malibu",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Modern Loft in Downtown",
@@ -21,7 +25,11 @@ const sampleListings = [
     },
     price: 1200,
     location: "New York City",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Mountain Retreat",
@@ -33,7 +41,11 @@ const sampleListings = [
     },
     price: 1000,
     location: "Aspen",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Historic Villa in Tuscany",
@@ -45,7 +57,11 @@ const sampleListings = [
     },
     price: 2500,
     location: "Florence",
+<<<<<<< HEAD
     country: "Italy",
+=======
+    city: "Italy",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -57,7 +73,11 @@ const sampleListings = [
     },
     price: 800,
     location: "Portland",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Beachfront Paradise",
@@ -69,7 +89,11 @@ const sampleListings = [
     },
     price: 2000,
     location: "Cancun",
+<<<<<<< HEAD
     country: "Mexico",
+=======
+    city: "Mexico",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -81,7 +105,11 @@ const sampleListings = [
     },
     price: 900,
     location: "Lake Tahoe",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -93,7 +121,11 @@ const sampleListings = [
     },
     price: 3500,
     location: "Los Angeles",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -105,7 +137,11 @@ const sampleListings = [
     },
     price: 3000,
     location: "Verbier",
+<<<<<<< HEAD
     country: "Switzerland",
+=======
+    city: "Switzerland",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -117,7 +153,11 @@ const sampleListings = [
     },
     price: 4000,
     location: "Serengeti National Park",
+<<<<<<< HEAD
     country: "Tanzania",
+=======
+    city: "Tanzania",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Historic Canal House",
@@ -129,7 +169,11 @@ const sampleListings = [
     },
     price: 1800,
     location: "Amsterdam",
+<<<<<<< HEAD
     country: "Netherlands",
+=======
+    city: "Netherlands",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Private Island Retreat",
@@ -141,7 +185,11 @@ const sampleListings = [
     },
     price: 10000,
     location: "Fiji",
+<<<<<<< HEAD
     country: "Fiji",
+=======
+    city: "Fiji",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Charming Cottage in the Cotswolds",
@@ -153,7 +201,11 @@ const sampleListings = [
     },
     price: 1200,
     location: "Cotswolds",
+<<<<<<< HEAD
     country: "United Kingdom",
+=======
+    city: "United Kingdom",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Historic Brownstone in Boston",
@@ -165,7 +217,11 @@ const sampleListings = [
     },
     price: 2200,
     location: "Boston",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Beachfront Bungalow in Bali",
@@ -177,7 +233,11 @@ const sampleListings = [
     },
     price: 1800,
     location: "Bali",
+<<<<<<< HEAD
     country: "Indonesia",
+=======
+    city: "Indonesia",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Mountain View Cabin in Banff",
@@ -189,7 +249,11 @@ const sampleListings = [
     },
     price: 1500,
     location: "Banff",
+<<<<<<< HEAD
     country: "Canada",
+=======
+    city: "Canada",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Art Deco Apartment in Miami",
@@ -201,7 +265,11 @@ const sampleListings = [
     },
     price: 1600,
     location: "Miami",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Tropical Villa in Phuket",
@@ -213,7 +281,11 @@ const sampleListings = [
     },
     price: 3000,
     location: "Phuket",
+<<<<<<< HEAD
     country: "Thailand",
+=======
+    city: "Thailand",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Historic Castle in Scotland",
@@ -225,7 +297,11 @@ const sampleListings = [
     },
     price: 4000,
     location: "Scottish Highlands",
+<<<<<<< HEAD
     country: "United Kingdom",
+=======
+    city: "United Kingdom",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Desert Oasis in Dubai",
@@ -249,7 +325,11 @@ const sampleListings = [
     },
     price: 1100,
     location: "Montana",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Beachfront Villa in Greece",
@@ -261,7 +341,11 @@ const sampleListings = [
     },
     price: 2500,
     location: "Mykonos",
+<<<<<<< HEAD
     country: "Greece",
+=======
+    city: "Greece",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Eco-Friendly Treehouse Retreat",
@@ -273,7 +357,11 @@ const sampleListings = [
     },
     price: 750,
     location: "Costa Rica",
+<<<<<<< HEAD
     country: "Costa Rica",
+=======
+    city: "Costa Rica",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Historic Cottage in Charleston",
@@ -285,7 +373,11 @@ const sampleListings = [
     },
     price: 1600,
     location: "Charleston",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Modern Apartment in Tokyo",
@@ -297,7 +389,11 @@ const sampleListings = [
     },
     price: 2000,
     location: "Tokyo",
+<<<<<<< HEAD
     country: "Japan",
+=======
+    city: "Japan",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Lakefront Cabin in New Hampshire",
@@ -309,7 +405,11 @@ const sampleListings = [
     },
     price: 1200,
     location: "New Hampshire",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Luxury Villa in the Maldives",
@@ -321,7 +421,11 @@ const sampleListings = [
     },
     price: 6000,
     location: "Maldives",
+<<<<<<< HEAD
     country: "Maldives",
+=======
+    city: "Maldives",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Ski Chalet in Aspen",
@@ -333,7 +437,11 @@ const sampleListings = [
     },
     price: 4000,
     location: "Aspen",
+<<<<<<< HEAD
     country: "United States",
+=======
+    city: "United States",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
   {
     title: "Secluded Beach House in Costa Rica",
@@ -345,7 +453,11 @@ const sampleListings = [
     },
     price: 1800,
     location: "Costa Rica",
+<<<<<<< HEAD
     country: "Costa Rica",
+=======
+    city: "Costa Rica",
+>>>>>>> faf72e3 (Initial commit to new repo)
   },
 ];
 

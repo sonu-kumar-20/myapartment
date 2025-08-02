@@ -18,7 +18,24 @@ body{
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   z-index: 1000;
 }
+<<<<<<< HEAD
 
+=======
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar-collapse {
+  position: relative;
+}
+>>>>>>> faf72e3 (Initial commit to new repo)
 .navbar .navbar-nav .nav-link {
   position: relative;
   font-weight: bold;
@@ -77,6 +94,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+=======
+
+>>>>>>> faf72e3 (Initial commit to new repo)
 }
 
 
@@ -85,12 +106,21 @@ body{
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
+<<<<<<< HEAD
+=======
+  color: black;
+>>>>>>> faf72e3 (Initial commit to new repo)
   
 }
 .f-info-social i:hover {
   transform: scale(1.5);
+<<<<<<< HEAD
   transition: transform 0.3s ease
    
+=======
+  transition: transform 0.3s ease;
+  
+>>>>>>> faf72e3 (Initial commit to new repo)
  }
 .f-info {
   text-align: center;
@@ -100,6 +130,10 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-items: space-evenly ;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> faf72e3 (Initial commit to new repo)
 }
 
 
@@ -107,6 +141,10 @@ body{
 .listing-card{
   border: none !important;
   margin-bottom: 2rem !important;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> faf72e3 (Initial commit to new repo)
 }
 .card-img-top{
 
@@ -114,11 +152,19 @@ body{
 width: 100% !important;
 object-fit: cover;
 height: 400px !important;
+<<<<<<< HEAD
 
+=======
+  border-radius: 0.3rem !important;
+>>>>>>> faf72e3 (Initial commit to new repo)
 }
 .card-body{
   padding: 0 !important;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> faf72e3 (Initial commit to new repo)
 }
 .card-text p {
   font-weight: 400 !important;
@@ -212,5 +258,64 @@ height: 400px !important;
 height: 300px;
 width: 700px;
 }
+<<<<<<< HEAD
 
 /* chatroom  */
+=======
+.profile-icon {
+  width: 42px;
+  height: 42px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background 0.3s ease;
+  font-size: 1.2rem;
+}
+.profile-icon:hover {
+  background-color: #aaa;
+  cursor: pointer;
+}
+.dropdown-menu {
+  min-width: 180px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+}
+.dropdown-item i {
+  color: cadetblue;
+}
+/* Make profile icon circular */
+.profile-icon {
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+/* Background color when collapsed menu opens on small screens */
+
+
+
+/* chatroom  */
+@media (max-width: 768px) {
+  .search-form {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+   .custom-navbar-collapse {
+    background-color: #f8f9fa; /* light gray for readability */
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .search-form {
+    margin: 1rem 0;
+  }
+}
+>>>>>>> faf72e3 (Initial commit to new repo)

@@ -7,10 +7,48 @@ const mapToken = process.env.MAP_TOKEN;
 const geoCodingClient = mbxGeocoding({ accessToken: mapToken });
 
 
+<<<<<<< HEAD
 module.exports.allListingPage = async (req, res) => {
   const allListings = await Listing.find({});
   res.render('listings/index.ejs', { allListings });
 }
+=======
+// module.exports.allListingPage = async (req, res) => {
+//   const allListings = await Listing.find({});
+//   res.render('listings/index.ejs', { allListings });
+// }
+
+module.exports.allListingPage = async (req, res) => {
+  const { search } = req.query;
+  let allListings = [];
+
+  if (search) {
+    console.log("we are in fuzzy Atlas Search");
+
+    allListings = await Listing.aggregate([
+      {
+        $search: {
+          index: "default", // Replace with your search index name if it's not "default"
+          text: {
+            query: search,
+            path: ["title", "location", "city"],
+            fuzzy: {
+              maxEdits: 2,       // Allow 1–2 character typos
+              prefixLength: 1,   // Require at least 1 character to match exactly
+            }
+          }
+        }
+      }
+    ]);
+  } else {
+    console.log("we are in else block (no search)");
+    allListings = await Listing.find({});
+  }
+
+  res.render('listings/index.ejs', { allListings, search });
+};
+
+>>>>>>> faf72e3 (Initial commit to new repo)
 
 module.exports.newListingForm =async(req, res) => {
   if(!req.isAuthenticated()){
