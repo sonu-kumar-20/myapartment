@@ -1,19 +1,11 @@
 <% layout("/layouts/boilerplate") -%>
 
 <div class="container mt-4">
-<<<<<<< HEAD
-  <h3>Welcome to Chat Room</h3>
-  <p><strong>Listing:</strong> <%= listing.title %></p>
 
-  <h5>
-    Chat with <%= otherUser.username %> 
-=======
- 
   <p><strong style="color: rgb(230, 26, 26);">Listing:</strong> <%= listing.title %></p>
 
   <h5 style="color: rgb(24, 25, 23);">
-   <%= otherUser.username %> 
->>>>>>> faf72e3 (Initial commit to new repo)
+    <%= otherUser.username %> 
     <span id="userStatus" style="font-weight: normal; font-size: 0.9rem; color: red;">(Offline)</span>
   </h5>
 
@@ -157,23 +149,23 @@
   // ================================
   // ✅ MULTI-SELECT DELETE SUPPORT
   // ================================
-chatBox.addEventListener('click', (e) => {
-  const bubble = e.target.closest('.message-bubble');
-  if (!bubble) return;
+  chatBox.addEventListener('click', (e) => {
+    const bubble = e.target.closest('.message-bubble');
+    if (!bubble) return;
 
-  const msgId = bubble.dataset.messageId;
-  if (!msgId || msgId === "undefined") return; // ✅ Don't allow invalid/undefined IDs
+    const msgId = bubble.dataset.messageId;
+    if (!msgId || msgId === "undefined") return;
 
-  if (selectedMessages.has(msgId)) {
-    selectedMessages.delete(msgId);
-    bubble.style.border = "none";
-  } else {
-    selectedMessages.add(msgId);
-    bubble.style.border = "2px solid red";
-  }
+    if (selectedMessages.has(msgId)) {
+      selectedMessages.delete(msgId);
+      bubble.style.border = "none";
+    } else {
+      selectedMessages.add(msgId);
+      bubble.style.border = "2px solid red";
+    }
 
-  bulkActions.style.display = selectedMessages.size > 0 ? "block" : "none";
-});
+    bulkActions.style.display = selectedMessages.size > 0 ? "block" : "none";
+  });
 
   deleteBtn.addEventListener("click", async () => {
     if (selectedMessages.size === 0) return;

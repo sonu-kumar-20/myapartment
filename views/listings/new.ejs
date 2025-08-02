@@ -6,7 +6,7 @@
       <div class="col-8 offset-2">
         <!-- Title Field -->
         <div class="mb-3">
-          <label for="title" class="form-label"   >Title</label>
+          <label for="title" class="form-label">Title</label>
           <input type="text" name="listing[title]" placeholder="Enter Title" class="form-control" required>
           <div class="valid-feedback">
             Title Looks good!
@@ -18,52 +18,34 @@
           <label for="description" class="form-label">Description</label>
           <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea>
           <div class="invalid-feedback">
-           Please type a short description
+            Please type a short description
           </div>
         </div>
 
-        <!-- Image URL Field -->
-        <!-- <div class="mb-3">
+        <!-- Image Upload Field -->
+        <div class="mb-3">
           <label for="image" class="form-label">Image URL</label>
-          <input type="text" name="listing[image]" placeholder="Enter Image URL" class="form-control" >
+          <input type="file" name="image" placeholder="Enter Image URL" class="form-control">
           <div class="invalid-feedback">
-            Please insert a url 
-           </div>
-        </div> -->
-
-            <div class="mb-3">
-          <label for="image" class="form-label">Image URL</label>
-          <input type="file" name="image" placeholder="Enter Image URL" class="form-control" >
-          <div class="invalid-feedback">
-            Please insert a url 
-           </div>
-           required
+            Please insert a URL
+          </div>
         </div>
 
-
-
-        <!-- Price and Country Fields -->
+        <!-- Price and City Fields -->
         <div class="row">
           <div class="mb-3 col-md-4">
-            <label for="price" class="form-label" >Price</label>
-            <input type="number"   name="listing[price]" placeholder="Enter Price" class="form-control" required>
-            <div  class="invalid-feedback" >
-              Please enter Valid Price
-             </div>
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" placeholder="Enter Price" class="form-control" required>
+            <div class="invalid-feedback">
+              Please enter a valid price
+            </div>
           </div>
           <div class="mb-3 col-md-8">
-<<<<<<< HEAD
-            <label for="country" class="form-label">Country</label>
-            <input type="text" name="listing[country]" placeholder="Enter Country" class="form-control" required>
+            <label for="city" class="form-label">City</label>
+            <input type="text" name="listing[city]" placeholder="Enter City" class="form-control" required>
             <div class="invalid-feedback">
-              Select country
-=======
-            <label for="country" class="form-label">City</label>
-            <input type="text" name="listing[city]" placeholder="Enter Country" class="form-control" required>
-            <div class="invalid-feedback">
-              Select City
->>>>>>> faf72e3 (Initial commit to new repo)
-             </div>
+              Select city
+            </div>
           </div>
         </div>
 
@@ -72,8 +54,8 @@
           <label for="location" class="form-label">Location</label>
           <input type="text" name="listing[location]" placeholder="Enter Location" class="form-control" required>
           <div class="invalid-feedback">
-            Please choose Location
-           </div>
+            Please choose a location
+          </div>
         </div>
 
         <!-- Submit Button -->

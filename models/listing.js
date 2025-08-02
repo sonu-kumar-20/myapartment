@@ -11,11 +11,8 @@ const listingSchema = new Schema({
   description: { type: String, required: true },
   price: { type: Number, required: true },
   location: { type: String, required: true },
-<<<<<<< HEAD
-  country: { type: String, required: true },
-=======
   city: { type: String, required: true },
->>>>>>> faf72e3 (Initial commit to new repo)
+
   image: {
    url: String,
    filename: String,

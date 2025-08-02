@@ -94,18 +94,11 @@ app.use('/', userRoutes);
 app.use('/chat', chatRoutes);
 
 app.get('/', (req, res) => {
-<<<<<<< HEAD
-  res.send("I am working here");
-});
 
-// app.get('/', listingController.allListingPage);
-
-
-=======
   res.redirect('/listings');
 });
 
->>>>>>> faf72e3 (Initial commit to new repo)
+
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not Found!"));
 });
