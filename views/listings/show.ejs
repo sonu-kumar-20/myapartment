@@ -1,6 +1,8 @@
 <% layout("/layouts/boilerplate") %>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/starability/starability-all.min.css">
 
+
+
 <div class="container my-5">
   <!-- Listing Title -->
   <div class="text-center mb-4">
@@ -14,18 +16,13 @@
       <p><strong>Owned By:</strong> <%= listing.owner.username %></p>
       <p><strong>Price:</strong> ₹<%= listing.price.toLocaleString('en-IN') %>/Month</p>
       <p><strong>Location:</strong> <%= listing.location %></p>
-
-      <p><strong>city:</strong> <%= listing.city %></p>
-
+      <p><strong>City:</strong> <%= listing.city %></p>
 
       <p class="mt-3 mb-1"><strong>Description:</strong></p>
-      <div class="scroll-container">
-        
-        <div class="scroll">
-          <%= listing.description %>
-        </div>
-        <label for="expand-toggle" class="read-more-label"></label>
+      <div id="descriptionContainer" class="scroll-container">
+        <div class="scroll"><%= listing.description %></div>
       </div>
+      <span id="toggleButton" class="read-more-label">Read More</span>
 
       <% if (currUser && String(currUser._id) !== String(listing.owner._id)) { %>
         <div class="text-center mt-4">
@@ -105,22 +102,34 @@
     return confirm("Are you sure you want to delete this listing?");
   }
 
+  // Read More / Read Less Toggle
+  const toggleBtn = document.getElementById('toggleButton');
+  const descContainer = document.getElementById('descriptionContainer');
+
+  toggleBtn.addEventListener('click', () => {
+    descContainer.classList.toggle('expanded');
+    toggleBtn.textContent = descContainer.classList.contains('expanded') ? 'Read Less' : 'Read More';
+  });
+
+  // Map
   let mapTokenn = "<%= process.env.MAP_TOKEN %>";
-  const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>; // ✅ Corrected spelling
+  const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
 
   mapboxgl.accessToken = mapTokenn;
 
   const map = new mapboxgl.Map({
     container: 'map',
-    center: coordinates, // ✅ Center map on coordinates
+    center: coordinates,
     zoom: 9,
-     attributionControl: false
+    attributionControl: false
   });
+
   map.addControl(new mapboxgl.AttributionControl({
-  compact: true,
-  customAttribution: 'My Custom Attribution © MyHome Maps'
-}));
+    compact: true,
+    customAttribution: 'My Custom Attribution © MyHome Maps'
+  }));
+
   new mapboxgl.Marker()
-    .setLngLat(coordinates) // ✅ Place marker at coordinates
+    .setLngLat(coordinates)
     .addTo(map);
 </script>
