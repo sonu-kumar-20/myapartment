@@ -12,30 +12,56 @@ module.exports.allListingPage = async (req, res) => {
   let allListings = [];
 
   if (search) {
-    console.log("we are in fuzzy Atlas Search");
+    console.log("🔍 Atlas Search Activated with fuzzy");
 
     allListings = await Listing.aggregate([
       {
         $search: {
-          index: "default", // Replace with your actual index name if different
-          text: {
-            query: search,
-            path: ["title", "location", "city"],
-            fuzzy: {
-              maxEdits: 2,
-              prefixLength: 1,
-            }
+          index: "default", // Your Atlas Search index name
+          compound: {
+            should: [
+              {
+                autocomplete: {
+                  query: search,
+                  path: "title",
+                  fuzzy: {
+                    maxEdits: 2
+                  }
+                }
+              },
+              {
+                autocomplete: {
+                  query: search,
+                  path: "location",
+                  fuzzy: {
+                    maxEdits: 2
+                  }
+                }
+              },
+              {
+                autocomplete: {
+                  query: search,
+                  path: "city",
+                  fuzzy: {
+                    maxEdits: 2
+                  }
+                }
+              }
+            ]
           }
         }
-      }
+      },
+      { $limit: 20 } // Optional limit
     ]);
   } else {
-    console.log("we are in else block (no search)");
+    console.log("📄 Showing all listings");
     allListings = await Listing.find({});
   }
 
-  res.render('listings/index.ejs', { allListings, search });
+  res.render("listings/index.ejs", { allListings, search });
 };
+
+
 
 // GET form for creating new listing
 module.exports.newListingForm = async (req, res) => {
