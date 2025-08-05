@@ -1,8 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/starability/starability-all.min.css">
 
-
-
 <div class="container my-5">
   <!-- Listing Title -->
   <div class="text-center mb-4">
@@ -20,9 +18,9 @@
 
       <p class="mt-3 mb-1"><strong>Description:</strong></p>
       <div id="descriptionContainer" class="scroll-container">
-         <input type="checkbox" id="expand-toggle">
         <div class="scroll"><%= listing.description %></div>
       </div>
+      <!-- Default text Read More -->
       <span id="toggleButton" class="read-more-label">Read More</span>
 
       <% if (currUser && String(currUser._id) !== String(listing.owner._id)) { %>
@@ -92,11 +90,10 @@
   <% } %>
 
   <!-- Map Section -->
-<div class="mt-5 mx-auto map-container">
-  <h4 class="mb-3">Home Location</h4>
-  <div id="map"></div>
-</div>
-
+  <div class="mt-5 mx-auto map-container">
+    <h4 class="mb-3">Home Location</h4>
+    <div id="map"></div>
+  </div>
 </div>
 
 <script>
