@@ -243,13 +243,13 @@ body {
   text-decoration: underline;
 }
 
-#expand-toggle:checked ~ .read-more-label::after {
+/* #expand-toggle:checked ~ .read-more-label::after {
   content: "Read Less";
-}
+} */
 
-.read-more-label::after {
+/* .read-more-label::after {
   content: "Read More";
-}
+} */
 
 .map-container {
   max-width: 700px; /* Desktop me max size */
