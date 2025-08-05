@@ -14,13 +14,13 @@
 
       <!-- Left Links -->
       <div class="navbar-nav me-auto mb-2 mb-md-0">
-        <a class="nav-link" href="/listings">All Listings</a>
+        <a class="nav-link" href="/listings">All Apartments</a>
         <a class="nav-link" href="/listings/new">Add New</a>
       </div>
 
       <!-- Search Bar -->
       <form class="d-flex mx-md-auto my-2 my-md-0 search-form" method="GET" action="/listings">
-        <input class="form-control me-2" type="search" name="search" placeholder="Search listings..."
+        <input class="form-control me-2" type="search" name="search" placeholder="Search By City..."
           aria-label="Search" value="<%= typeof search !== 'undefined' ? search : '' %>">
         <button class="btn btn-outline-danger" type="submit">Search</button>
       </form>

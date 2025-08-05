@@ -6,7 +6,7 @@
 <div class="container my-5">
   <!-- Listing Title -->
   <div class="text-center mb-4">
-    <h2 class="text-primary fw-bold"><%= listing.title %></h2>
+    <h2 class="text-danger fw-bold"><%= listing.title %></h2>
   </div>
 
   <!-- Listing Card -->
@@ -91,10 +91,11 @@
   <% } %>
 
   <!-- Map Section -->
-  <div class="mt-5 mx-auto" style="max-width: 700px;">
-    <h4 class="mb-3">Home Location</h4>
-    <div id="map" style="height: 300px; border-radius: 8px;"></div>
-  </div>
+<div class="mt-5 mx-auto map-container">
+  <h4 class="mb-3">Home Location</h4>
+  <div id="map"></div>
+</div>
+
 </div>
 
 <script>

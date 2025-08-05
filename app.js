@@ -46,7 +46,6 @@ const store = mongoStore.create({
 });
 
 store.on("error",(err)=>{
-  console.log("error in mongo session stroe ",err);
 })
 
 const sessionOptions = {
@@ -72,10 +71,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-  console.log("🧠 SESSION DEBUG:");
-  console.log("Session ID:", req.sessionID);
-  console.log("Is Authenticated:", req.isAuthenticated ? req.isAuthenticated() : false);
-  console.log("User:", req.user);
   next();
 });
 

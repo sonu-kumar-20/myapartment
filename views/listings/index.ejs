@@ -12,12 +12,18 @@
     <% for (let listing of allListings) { %>
       <div class="col">
         <a href="/listings/<%= listing._id %>" class="listings-link text-decoration-none">
-          <div class="card listing-card h-100">
+          <div class="card listing-card h-100 position-relative">
             <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image" style="height: 20rem; object-fit: cover;">
+            
+            <!-- Overlay -->
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+              <span class="overlay-text">Click to View Details</span>
+            </div>
+
             <div class="card-body">
               <p class="card-text">
                 <b><%= listing.title %></b><br>
-                &#x20b9; <%= listing.price.toLocaleString('en-IN') %> / Month
+                ₹ <%= listing.price.toLocaleString('en-IN') %> / Month
               </p>
             </div>
           </div>

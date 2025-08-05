@@ -88,7 +88,6 @@ router.get('/:listingId/:otherUserId', isLoggedIn, async (req, res) => {
     });
 
   } catch (err) {
-    console.error("❌ Error loading chatroom:", err);
     req.flash("error", "Could not load chatroom.");
     res.redirect('/listings');
   }
@@ -125,7 +124,6 @@ router.post("/:listingId/:otherUserId", isLoggedIn, async (req, res) => {
 
     res.status(200).end(); // no page reload
   } catch (err) {
-    console.error("❌ Error sending message:", err);
     res.status(500).json({ error: "Failed to send message" });
   }
 });
@@ -150,8 +148,6 @@ router.delete("/:listingId/:otherUserId", isLoggedIn, async (req, res) => {
 
 router.post('/delete-messages', isLoggedIn, async (req, res) => {
   const { messageIds } = req.body;
-  console.log("👉 messageIds received:", messageIds);
-
   try {
     // ✅ Validate it's an array
     if (!Array.isArray(messageIds) || messageIds.length === 0) {
@@ -166,11 +162,8 @@ router.post('/delete-messages', isLoggedIn, async (req, res) => {
     }
 
     const result = await Chat.deleteMany({ _id: { $in: validIds } });
-    console.log(`🗑️ Deleted ${result.deletedCount} messages`);
-
     res.status(200).json({ success: true, deletedCount: result.deletedCount });
   } catch (err) {
-    console.error("❌ Deletion error:", err);
     res.status(500).json({ error: "Failed to delete messages" });
   }
 });

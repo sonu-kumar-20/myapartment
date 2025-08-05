@@ -1,4 +1,3 @@
-console.log("🔑 MAP_TOKEN:", process.env.MAP_TOKEN);
 
 const Listing = require('../models/listing.js');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
@@ -12,8 +11,6 @@ module.exports.allListingPage = async (req, res) => {
   let allListings = [];
 
   if (search) {
-    console.log("🔍 Atlas Search Activated with fuzzy");
-
     allListings = await Listing.aggregate([
       {
         $search: {
@@ -54,7 +51,6 @@ module.exports.allListingPage = async (req, res) => {
       { $limit: 20 } // Optional limit
     ]);
   } else {
-    console.log("📄 Showing all listings");
     allListings = await Listing.find({});
   }
 
@@ -82,7 +78,6 @@ module.exports.newCreateedList = async (req, res) => {
   const features = response.body.features;
 
   if (features.length === 0) {
-    console.log("No features found.");
     req.flash("error", "Location not found.");
     return res.redirect("/listings/new");
   }

@@ -16,5 +16,4 @@ setupSocket(io);     // Setup Socket.io
 
 const PORT = process.env.PORT || 3000; // 3000 for local testing
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });

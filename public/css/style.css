@@ -102,7 +102,7 @@ body {
 }
 
 .f-info-social i:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform 0.3s ease;
 }
 
@@ -144,12 +144,28 @@ body {
 /* image overlay effect use here */
 .card-img-overlay {
   opacity: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: opacity 0.3s ease;
+  border-radius: 0.3rem;
 }
 
-.card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: white;
+.listing-card:hover .card-img-overlay {
+  opacity: 0.5;
 }
+
+.overlay-text {
+  color: black;
+  font-weight: 700; /* default bold */
+  font-size: 1.2rem;
+  transition: font-weight 0.2s ease;
+}
+
+.overlay-text:active {
+  font-weight: 900; /* click hone pe extra bold */
+   text-shadow: 0px 0px 1px #000; /* halka shadow for depth */
+}
+
+
 
 /* .addbutton */
 .btn-dark {
@@ -183,16 +199,30 @@ body {
 }
 
 /* Initially show only part of the content */
-.scroll {
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
-}
 
 /* Hidden checkbox to toggle "Read More" */
-#expand-toggle {
-  display: none;
+.scroll-container {
+  position: relative;
+  max-height: 100px; /* Pehle sirf chhota portion show kare */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
+
+.scroll-container.expanded {
+  max-height: 1000px; /* enough to show all text */
+}
+
+.read-more-label {
+  display: inline-block;
+  color: blue;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.read-more-label:hover {
+  text-decoration: underline;
+}
+
 
 /* When checkbox is checked, expand the section */
 #expand-toggle:checked ~ .scroll {
@@ -221,9 +251,20 @@ body {
   content: "Read More";
 }
 
+.map-container {
+  max-width: 700px; /* Desktop me max size */
+  width: 100%; /* Phone me pura available space le */
+}
+
 #map {
   height: 300px;
-  width: 700px;
+  width: 100%;
+  border-radius: 8px;
+}
+@media (max-width: 576px) {
+  #map {
+    height: 200px;
+  }
 }
 
 /* Profile dropdown & icon */
