@@ -253,6 +253,13 @@ view in documents
 ## 📬 13. Contact Information
 
 **Author:** Sonu Kumar
-Live view : https://myapartment.onrender.com/listings
+## 14. Live Demo
+
+🏠 **[My Apartment](https://myapartment.onrender.com/listings)** – Full-stack rental property listing platform built with Node.js, Express, MongoDB, and Bootstrap.  
+
+🎵 **[My Music](https://my-music-sss.netlify.app/)** – Responsive music streaming app built with React & React Router.  
+
+💼 **[My Portfolio](https://sonukumarwebsite.netlify.app/)** – Personal portfolio website showcasing my skills and projects, built with React.
+
 
 ---
