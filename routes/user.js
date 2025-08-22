@@ -85,7 +85,7 @@ router.post("/verify-otp", async (req, res, next) => {
     req.login(registeredUser, err => {
       if (err) return next(err);
       delete req.session.signupData; // Clear session data
-      req.flash("success", "Welcome to Wanderlust!");
+      req.flash("success", "Welcome to MyApartment!");
       res.redirect("/listings");
     });
   } catch (err) {
